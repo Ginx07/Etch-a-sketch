@@ -1,22 +1,24 @@
- const container = document.querySelector(".container");
+const container = document.querySelector(".container");
 
 function makeGrid() {
-    const container = document.querySelector('.container');
+  const container = document.querySelector('.container');
 
-    //making the 16x16 grid
-    for (let i = 0; i < 16; i++) {
-        for (let j = 0; j < 16; j++) {
-        const square = document.createElement('div');
-        //adding individual squares as it cycles
-        square.classList.add('square');
-        container.appendChild(square);
-        }
-    }
-    
-}
-    const hoverElement = document.getElementById('div_hover');
+  for (let i = 0; i < 16 * 16; i++) {
+    const square = document.createElement('div');
+    square.classList.add('square');
 
-    hoverElement.addEventListener('mouseover', () =>  {
-        hoverElement.style.backgroundColor = 'coral';
+    // Add hover effect
+    square.addEventListener('mouseover', () => {
+      square.style.backgroundColor = 'coral';
     });
+
+    //clears square back if left on
+    square.addEventListener('mouseleave', () => {
+        square.style.backgroundColor = 'pink';
+    });
+
+    container.appendChild(square);
+  }
+}
+
 makeGrid();
