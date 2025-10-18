@@ -3,15 +3,31 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(16, 20px);
-  grid-template-rows: repeat(16, 20px);
-  gap: 2px; /* optional spacing between squares */
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(16 * 20px + 15 * 2px); /* total width including gaps */
+  gap: 2px;
 }
 
 .square {
-  width: 100%;
-  height: 100%;
-  border: 1px solid blue;
+  flex: 0 0 6.5%;
+  height: 20px;
+  aspect-ratio: 1;
+  border: 1px solid darkolivegreen;
   background-color: pink;
+  transition: background-color 0.3s;
+  opacity: 1;
+}
+
+
+.div_hover:hover {
+    background-color: coral;
+    opacity: .5;
+}
+
+button {
+    background-color: darkolivegreen;
+    margin: 5px;
+    padding: 4px 6px;
+    border-radius: 6px;
 }
