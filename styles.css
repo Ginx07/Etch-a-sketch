@@ -5,7 +5,7 @@ body {
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: calc(16 * 20px + 15 * 2px); /* total width including gaps */
+  
   gap: 2px;
 }
 
