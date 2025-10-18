@@ -6,11 +6,14 @@ function makeGrid(size) {
   container.style.gridTemplateColumns = `repeat(${size}, 20px)`;
   container.style.gridTemplateRows = `repeat(${size}, 20px)`;
 
+
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
       const square = document.createElement('div');
       //creating individual squares
       square.classList.add('square');
+      square.style.flex= `0 0 ${100 / size}%`;
+
       square.addEventListener('mouseover', () => {
         square.style.backgroundColor = 'coral';
       });
