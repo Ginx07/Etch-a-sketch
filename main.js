@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const resetBtn = document.getElementById('resetBtn');
+let size = 0;
 
 function makeGrid(size) {
   container.innerHTML = ''; // Clear existing squares
@@ -17,16 +18,14 @@ function makeGrid(size) {
   }
 }
 
-//changing opacity on hover
-function greyscale() {
-  let currentOpacity = .1;
-  let colorPick = "#E8E8E8";
-
-  if (e.style.opacity <= 0.9) {
-    e.style.opacity = +e.styleopacity + 0.1;
-  }
+function newGame() {
+    let num = prompt("Enter size", "1-99")
+    if (num != null) {
+      makeGrid(num)};
+  
 }
 
+resetBtn.addEventListener('mousedown', newGame)
 
 // resetBtn.addEventListener('click', () => {
 //   makeGrid(16); // Reset to default 16x16
